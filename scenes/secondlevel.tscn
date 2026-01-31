@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3secondlevel"]
 
-[ext_resource type="Script" path="res://scenes/secondlevel.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://bacykkp6q5ts6" path="res://scenes/secondlevel.gd" id="1_script"]
 
 [node name="SecondLevel" type="Control"]
 layout_mode = 3
