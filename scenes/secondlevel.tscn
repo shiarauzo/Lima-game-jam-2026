@@ -20,6 +20,23 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.101961, 0.101961, 0.180392, 1)
 
+[node name="Banner" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 50.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Banner"]
+layout_mode = 2
+text = "Ir a rompecabezas"
+
+[node name="GoButton" type="Button" parent="Banner"]
+layout_mode = 2
+text = "Ir"
+
 [node name="Object1" type="Button" parent="."]
 layout_mode = 1
 offset_left = 100.0
@@ -100,6 +117,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.8, 0.8, 0.2, 1)
 
+[connection signal="pressed" from="Banner/GoButton" to="." method="_on_go_button_pressed"]
 [connection signal="pressed" from="Object1" to="." method="_on_object1_pressed"]
 [connection signal="pressed" from="Object2" to="." method="_on_object2_pressed"]
 [connection signal="pressed" from="Object3" to="." method="_on_object3_pressed"]

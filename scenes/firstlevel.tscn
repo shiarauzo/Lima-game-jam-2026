@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bus2qjgcn4rv0"]
 
 [ext_resource type="Script" uid="uid://cp2s1vua1ma07" path="res://scenes/firstlevel.gd" id="1_script"]
-[ext_resource type="Script" uid="uid://b8ruvv52vhkyo" path="res://scenes/Controls.gd" id="2_1hkup"]
+[ext_resource type="Script" path="res://scenes/Controls.gd" id="2_1hkup"]
 
 [node name="FirstLevel" type="Control"]
 layout_mode = 3

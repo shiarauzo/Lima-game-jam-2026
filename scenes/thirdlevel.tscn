@@ -1,0 +1,299 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3thirdlevel"]
+
+[ext_resource type="Script" path="res://scenes/thirdlevel.gd" id="1_script"]
+
+[node name="ThirdLevel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0.1, 0.12, 1)
+
+[node name="PuzzleContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -212.0
+offset_right = 212.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tile1" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="Tile2" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 104.0
+offset_right = 204.0
+offset_bottom = 100.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.867, 0.267, 0.267, 1)
+
+[node name="Tile3" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 208.0
+offset_right = 308.0
+offset_bottom = 100.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.933, 0.333, 0.333, 1)
+
+[node name="Tile4" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 312.0
+offset_right = 412.0
+offset_bottom = 100.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.4, 0.4, 1)
+
+[node name="Tile5" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_top = 104.0
+offset_right = 100.0
+offset_bottom = 204.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.2, 0.8, 0.2, 1)
+
+[node name="Tile6" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 104.0
+offset_right = 204.0
+offset_bottom = 204.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.267, 0.867, 0.267, 1)
+
+[node name="Tile7" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 104.0
+offset_right = 308.0
+offset_bottom = 204.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.333, 0.933, 0.333, 1)
+
+[node name="Tile8" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 104.0
+offset_right = 412.0
+offset_bottom = 204.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.4, 1, 0.4, 1)
+
+[node name="Tile9" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_top = 208.0
+offset_right = 100.0
+offset_bottom = 308.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.2, 0.2, 0.8, 1)
+
+[node name="Tile10" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 208.0
+offset_right = 204.0
+offset_bottom = 308.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile10"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.267, 0.267, 0.867, 1)
+
+[node name="Tile11" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 208.0
+offset_right = 308.0
+offset_bottom = 308.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile11"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.333, 0.333, 0.933, 1)
+
+[node name="Tile12" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 208.0
+offset_right = 412.0
+offset_bottom = 308.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile12"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.4, 0.4, 1, 1)
+
+[node name="Tile13" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_top = 312.0
+offset_right = 100.0
+offset_bottom = 412.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile13"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.8, 0.8, 0.2, 1)
+
+[node name="Tile14" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 312.0
+offset_right = 204.0
+offset_bottom = 412.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile14"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.867, 0.867, 0.267, 1)
+
+[node name="Tile15" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 312.0
+offset_right = 308.0
+offset_bottom = 412.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile15"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.933, 0.933, 0.333, 1)
+
+[node name="Tile16" type="Control" parent="PuzzleContainer"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 312.0
+offset_right = 412.0
+offset_bottom = 412.0
+
+[node name="ColorRect" type="ColorRect" parent="PuzzleContainer/Tile16"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 0.4, 1)
