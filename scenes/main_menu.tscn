@@ -37,6 +37,71 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "CERRAR"
 
+[node name="OptionsModal" type="Window" parent="."]
+title = "Opciones"
+initial_position = 2
+size = Vector2i(400, 300)
+visible = false
+transient = true
+exclusive = true
+
+[node name="Panel" type="Panel" parent="OptionsModal"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsModal"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MasterLabel" type="Label" parent="OptionsModal/VBoxContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="OptionsModal/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicLabel" type="Label" parent="OptionsModal/VBoxContainer"]
+layout_mode = 2
+text = "Música"
+
+[node name="MusicSlider" type="HSlider" parent="OptionsModal/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="OptionsModal/VBoxContainer"]
+layout_mode = 2
+text = "Efectos"
+
+[node name="SFXSlider" type="HSlider" parent="OptionsModal/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="CloseButton" type="Button" parent="OptionsModal/VBoxContainer"]
+layout_mode = 2
+text = "Cerrar"
+
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="close_requested" from="OptionsModal" to="." method="_on_options_modal_close_requested"]
+[connection signal="value_changed" from="OptionsModal/VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="OptionsModal/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="OptionsModal/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="OptionsModal/VBoxContainer/CloseButton" to="." method="_on_options_modal_close_requested"]
