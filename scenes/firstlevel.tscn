@@ -1,7 +1,81 @@
-[gd_scene format=3 uid="uid://bus2qjgcn4rv0"]
+[gd_scene load_steps=2 format=3 uid="uid://bus2qjgcn4rv0"]
 
-[node name="MainMenu" type="Control"]
+[ext_resource type="Script" path="res://scenes/firstlevel.gd" id="1_script"]
+
+[node name="FirstLevel" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1153.0
-offset_bottom = 647.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[node name="Card" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -100.0
+offset_right = 75.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2, 0.15, 0.1, 1)
+text = "CARTA"
+
+[node name="CardColorRect" type="ColorRect" parent="Card"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.831373, 0.647059, 0.454902, 1)
+
+[node name="CardModal" type="Window" parent="."]
+title = "Carta"
+initial_position = 2
+size = Vector2i(500, 400)
+visible = false
+transient = true
+exclusive = true
+
+[node name="Panel" type="ColorRect" parent="CardModal"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.960784, 0.960784, 0.862745, 1)
+
+[node name="CloseButton" type="Button" parent="CardModal"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Cerrar"
+
+[connection signal="pressed" from="Card" to="." method="_on_card_pressed"]
+[connection signal="close_requested" from="CardModal" to="." method="_on_card_modal_close_requested"]
+[connection signal="pressed" from="CardModal/CloseButton" to="." method="_on_card_modal_close_requested"]
