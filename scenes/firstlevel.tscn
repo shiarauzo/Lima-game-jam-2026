@@ -1,3 +1,35 @@
 [gd_scene format=3 uid="uid://bus2qjgcn4rv0"]
 
-[node name="Firstlevel" type="Node2D"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 652.0
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 295.0
+offset_right = 509.0
+offset_bottom = 401.0
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "JUGAR"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "OPCIONES"
+
+[node name="Close" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "CERRAR"
