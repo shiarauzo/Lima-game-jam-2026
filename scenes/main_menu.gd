@@ -10,4 +10,5 @@ func _on_options_pressed() -> void:
 
 
 func _on_close_pressed() -> void:
-	pass # Replace with function body.
+	print("Close pressed")
+	get_tree().quit()
