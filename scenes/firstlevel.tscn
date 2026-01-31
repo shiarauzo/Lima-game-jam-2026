@@ -39,7 +39,7 @@ offset_right = 50.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Cerrar"
+text = "Entendido"
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -49,6 +49,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[node name="Banner" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 50.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Banner"]
+layout_mode = 2
+text = "Quiero ir a cambiar"
+
+[node name="GoButton" type="Button" parent="Banner"]
+layout_mode = 2
+text = "Ir"
 
 [node name="Card" type="Button" parent="."]
 layout_mode = 1
@@ -83,4 +100,5 @@ color = Color(0.831373, 0.647059, 0.454902, 1)
 
 [connection signal="close_requested" from="CardModal" to="." method="_on_card_modal_close_requested"]
 [connection signal="pressed" from="CardModal/CloseButton" to="." method="_on_card_modal_close_requested"]
+[connection signal="pressed" from="Banner/GoButton" to="." method="_on_go_button_pressed"]
 [connection signal="pressed" from="Card" to="." method="_on_card_pressed"]
