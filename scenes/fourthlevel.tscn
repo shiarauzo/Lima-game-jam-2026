@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://y43t0ok7f07m"]
+
+[ext_resource type="Texture2D" uid="uid://bo8wownnxwcwk" path="res://icon.svg" id="1_8ddxd"]
+[ext_resource type="Script" uid="uid://bf4w83gtxuoj4" path="res://scenes/texture_rect.gd" id="2_ean2e"]
+
+[node name="Thridlevel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 116.0
+offset_top = 32.0
+offset_right = 156.0
+offset_bottom = 72.0
+texture = ExtResource("1_8ddxd")
+expand_mode = 1
+script = ExtResource("2_ean2e")
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 224.0
+offset_top = 31.0
+offset_right = 264.0
+offset_bottom = 71.0
+expand_mode = 1
+script = ExtResource("2_ean2e")
+
+[node name="Panel" type="Panel" parent="TextureRect2"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
