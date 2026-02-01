@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://g08a2wf627vl"]
+[gd_scene load_steps=4 format=3 uid="uid://g08a2wf627vl"]
 
 [ext_resource type="Texture2D" uid="uid://dq8u04708gmr" path="res://Sprites 7/Female_Hand_PNG_Clip_Art.png" id="1_febe8"]
 [ext_resource type="Script" uid="uid://b5nfpv3p7aywh" path="res://scenes/father_panels.gd" id="1_g84jk"]
+[ext_resource type="Texture2D" uid="uid://dw1kgtq5ymrjy" path="res://Sprites 7/Primera-escena.png" id="2_aswpm"]
 
 [node name="FatherPanels" type="Node2D"]
 script = ExtResource("1_g84jk")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -25.0
+offset_top = -4.0
+offset_right = 1895.0
+offset_bottom = 1076.0
+scale = Vector2(0.62946, 0.606689)
+texture = ExtResource("2_aswpm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(577, 569)
