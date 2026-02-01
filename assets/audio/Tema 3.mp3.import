@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bo5lpeju3d66f"
+path="res://.godot/imported/Tema 3.mp3-45cf4f30f6d803af4984eaf88a080be7.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Tema 3.mp3"
+dest_files=["res://.godot/imported/Tema 3.mp3-45cf4f30f6d803af4984eaf88a080be7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

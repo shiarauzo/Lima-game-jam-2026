@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://yr7nha0o1ynj"]
+[gd_scene load_steps=6 format=3 uid="uid://vuqbrfbevdpf"]
 
-[ext_resource type="Script" uid="uid://bsyuyjvoxkyiv" path="res://game_manager.gd" id="1_7gwgi"]
+[ext_resource type="Script" uid="uid://bsyuyjvoxkyiv" path="res://game_manager.gd" id="1_5royu"]
 
 [sub_resource type="Gradient" id="Gradient_axsnq"]
 offsets = PackedFloat32Array(0.3, 1)
@@ -24,7 +24,7 @@ texture = SubResource("GradientTexture1D_7gwgi")
 offset = Vector2(50, 50)
 
 [node name="GameManager" type="Node" parent="."]
-script = ExtResource("1_7gwgi")
+script = ExtResource("1_5royu")
 overlay_path = NodePath("../LightOverlay")
 game_over_label_path = NodePath("../GameOverLabel")
 restart_button_path = NodePath("../RestartButton")

@@ -49,6 +49,7 @@ var snap_distance: float = 50.0
 var piece_size: float = 50.0
 
 @onready var message_label: Label = $MessageLabel
+@onready var continue_button: Button = $ContinueButton
 
 func _ready() -> void:
 	for piece in $PuzzlePieces.get_children():
@@ -56,6 +57,7 @@ func _ready() -> void:
 		original_positions[piece.name] = piece.position
 
 	message_label.text = ""
+	continue_button.pressed.connect(_on_continue_pressed)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -264,3 +266,10 @@ func _change_carta_image() -> void:
 		carta_reference.texture = new_texture
 		carta_text.text = carta_texts[replacement_count]
 		replacement_count += 1
+
+		# Si se colocaron todas las piezas (3), mostrar botón continuar
+		if replacement_count >= carta_textures.size():
+			continue_button.visible = true
+
+func _on_continue_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/FatherPanels.tscn")
