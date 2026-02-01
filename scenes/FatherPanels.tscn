@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://d3ylku7d7x4dx"]
 
-[ext_resource type="Script" path="res://scenes/father_panels.gd" id="1_g84jk"]
+[ext_resource type="Script" uid="uid://b5nfpv3p7aywh" path="res://scenes/father_panels.gd" id="1_g84jk"]
 [ext_resource type="Texture2D" uid="uid://dw1kgtq5ymrjy" path="res://Sprites 7/Primera-escena.png" id="2_aswpm"]
 [ext_resource type="Texture2D" uid="uid://c6jbfq1g54r5b" path="res://Sprites 7/Mano-izquierdaB.png" id="3_a1i0j"]
 [ext_resource type="Texture2D" uid="uid://0nx8tstsyv5n" path="res://Sprites 7/Globo-de-texto-normal.png" id="4_a1i0j"]
@@ -94,3 +94,12 @@ offset_bottom = 419.0
 [node name="Tema2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_tema2")
 autoplay = true
+
+[node name="ContinueButton" type="Button" parent="."]
+visible = false
+offset_left = 1050.0
+offset_top = 600.0
+offset_right = 1200.0
+offset_bottom = 650.0
+theme_override_font_sizes/font_size = 20
+text = "Continuar"

@@ -7,6 +7,7 @@ extends Node2D
 @onready var globe_son := $Globe_son
 @onready var globe_dad := $Globe_dad
 @onready var word_search := $WordSearch
+@onready var continue_button := $ContinueButton
 
 func _ready():
 	"""dadlabel.visible = false
@@ -14,11 +15,13 @@ func _ready():
 	globe_dad.visible = false
 	globe_son.visible = false
 	word_search.visible = false
+	continue_button.visible = false
+	continue_button.pressed.connect(_on_continue_pressed)
 	await get_tree().create_timer(0.8).timeout
 	move_up()
 	await get_tree().create_timer(3).timeout
-	
-	
+
+
 	await wait(2)
 
 	move_down()
@@ -31,7 +34,7 @@ func _ready():
 	SonDialog,
 	globe_son
 )
-	
+
 	await start_word_search()
 
 """# 👇 AHORA SÍ, EN SECUENCIA REAL
@@ -75,16 +78,16 @@ func move_down():
 	background.texture = preload("res://Sprites 7/Segunda-escena.png")
 	background.expand = true
 	background.stretch_mode = TextureRect.STRETCH_SCALE
-	
+
 	"""waza padre"""
-	
-	
-	
+
+
+
 var DadDialog := [
 	"...",
 	"...| ¡NO!| Quieres acabar conmigo, lo sé...| ¡Y luego quedarte con el negocio!| A ese amigo lo conozco antes que tú.| ¡Lo quiero como a un hijo!|",
 	"Ah...| Entonces te disculpas, Me hablas de un amigo, le construyes una identidad, ¡Años con ese amigo!| ¡¿Quién miente?!| ¡¿Cuál es su nombre!?|"
-	
+
 ]
 
 var dialog_index := 0
@@ -102,16 +105,16 @@ var SonDialog := [
 # ─────────────────────────────
 
 func play_dialog(label: Label, dialog: Array, globeType: Sprite2D):
-	
-	
-	
+
+
+
 	label.visible = true
 	globeType.visible = true
-	
+
 	background.texture = preload("res://Sprites 7/Tercera-escena.png")
 	background.expand = true
 	background.stretch_mode = TextureRect.STRETCH_SCALE
-	
+
 	dialog_index = 0
 	var index := 0   # ← LOCAL
 	while dialog_index < dialog.size():
@@ -120,10 +123,10 @@ func play_dialog(label: Label, dialog: Array, globeType: Sprite2D):
 		await wait(2.0)
 
 	label.visible = false
-	
-	
 
-	
+
+
+
 
 func wait(time: float):
 	await get_tree().create_timer(time).timeout
@@ -135,9 +138,13 @@ func start_word_search():
 	globe_son.visible = false
 	word_search.start_game()
 	await word_search.completed
-	
-	
-	
+	continue_button.visible = true
+
+func _on_continue_pressed():
+	get_tree().change_scene_to_file("res://scenes/fin.tscn")
+
+
+
 func play_ping_pong_dialog(
 	dad_label: Label,
 	dad_dialog: Array,
