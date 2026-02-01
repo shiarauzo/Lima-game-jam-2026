@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3secondlevel"]
+[gd_scene load_steps=12 format=3 uid="uid://c3secondlevel"]
 
 [ext_resource type="Script" uid="uid://bacykkp6q5ts6" path="res://scenes/secondlevel.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://b70nuwexy1pir" path="res://assets/fondo_mainmenu.png" id="2_fondo"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://fmoosb0lvjkp" path="res://assets/retazo/retazo2.png" id="7_retazo2"]
 [ext_resource type="Texture2D" uid="uid://0hllosvn1cia" path="res://assets/retazo/retazo3.png" id="8_retazo3"]
 [ext_resource type="Texture2D" uid="uid://cjhxqhsnsp3u1" path="res://assets/retazo/retazo4.png" id="9_retazo4"]
+[ext_resource type="FontFile" uid="uid://cm8i15jtyjb6p" path="res://Fonts/OLDSH___.TTF" id="10_font"]
 
 [node name="SecondLevel" type="Control"]
 layout_mode = 3
@@ -63,6 +64,25 @@ scale = Vector2(1.12, 1.12)
 texture = ExtResource("3_1wihk")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="CartaText" type="Label" parent="CartaReference"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 301.786
+offset_top = 39.2857
+offset_right = -263.214
+offset_bottom = -43.7143
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.15, 0.1, 0.05, 1)
+theme_override_fonts/font = ExtResource("10_font")
+theme_override_font_sizes/font_size = 10
+text = "Temo que la lejanía imponga el desvanecimiento de nuestra amistad, por lo que me veo dedicado a llenarte de cartas en cuanto pase en esta ciudad.
+Me he reservado la novedad más importante para ésta, mi última carta. Me he prometido con la señorita Frieda Brandenfeld, una muchacha que se estableció aquí mucho tiempo después de tu partida y a la que tú apenas conocerás.
+En cuanto al negocio que tuvimos juntos, ha prosperado, la tienda es grande y elegante. Todo se ve ordenado y siempre está llena de clientes."
+autowrap_mode = 2
 
 [node name="PuzzlePieces" type="Control" parent="."]
 layout_mode = 1
