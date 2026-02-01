@@ -4,13 +4,16 @@ var dragging: TextureRect = null
 var drag_offset: Vector2 = Vector2.ZERO
 var original_positions: Dictionary = {}
 
-# Piezas inactivas que muestran mensaje
+# Piezas inactivas que muestran mensaje (hasta que el puzzle esté completo)
 var inactive_pieces = ["Retazo1B", "Retazo1C", "Retazo1D"]
 
+# Piezas requeridas para completar el puzzle
+var required_pieces = ["Retazo3", "Retazo4", "Retazo1A", "Retazo2"]
+
+# Estado del puzzle
+var puzzle_complete: bool = false
+
 # Conexiones válidas: pieza -> {dirección: pieza_que_conecta}
-# right = la otra pieza va a la derecha
-# left = la otra pieza va a la izquierda
-# bottom = la otra pieza va abajo
 var valid_connections = {
 	"Retazo3": {"right": "Retazo4"},
 	"Retazo4": {"left": "Retazo3", "right": "Retazo1A"},
@@ -30,12 +33,10 @@ var piece_size: float = 100.0
 @onready var message_label: Label = $MessageLabel
 
 func _ready() -> void:
-	# Guardar posiciones originales y configurar mouse filter
 	for piece in $PuzzlePieces.get_children():
 		piece.mouse_filter = Control.MOUSE_FILTER_STOP
 		original_positions[piece.name] = piece.position
 
-	# Ocultar mensaje al inicio
 	message_label.text = ""
 
 func _input(event: InputEvent) -> void:
@@ -57,8 +58,10 @@ func _start_drag(mouse_pos: Vector2) -> void:
 		if piece.get_global_rect().has_point(mouse_pos):
 			# Verificar si es una pieza inactiva
 			if piece.name in inactive_pieces:
-				_show_message("Parece que esta pieza es importante, pero todavía no.")
-				return
+				if not puzzle_complete:
+					_show_message("Parece que esta pieza es importante, pero todavía no.")
+					return
+				# Si puzzle completo, permitir arrastrar
 
 			dragging = piece
 			drag_offset = mouse_pos - piece.position
@@ -70,14 +73,39 @@ func _stop_drag() -> void:
 	if dragging == null:
 		return
 
+	var piece_name = str(dragging.name)
+
+	# Si es una pieza de reemplazo y el puzzle está completo
+	if piece_name in inactive_pieces and puzzle_complete:
+		var retazo1a = $PuzzlePieces.get_node_or_null("Retazo1A")
+		if retazo1a != null:
+			var distance = dragging.position.distance_to(retazo1a.position)
+			if distance < snap_distance:
+				# Reemplazar Retazo1A
+				dragging.position = retazo1a.position
+				dragging.rotation = 0
+				retazo1a.visible = false
+				# Agregar la nueva pieza al grupo
+				var group = _get_group_for_piece(retazo1a)
+				if group != null:
+					group.append(dragging)
+				dragging = null
+				return
+
+		# Si no se colocó sobre Retazo1A, volver a posición original
+		_return_to_original(dragging)
+		dragging = null
+		return
+
 	var snapped = _try_snap(dragging)
 
 	if not snapped:
-		# Verificar si está cerca de alguna pieza pero no es conexión válida
 		var nearby_piece = _get_nearby_piece(dragging)
 		if nearby_piece != null:
-			# Hay una pieza cerca pero no es válida, volver a posición original
 			_return_to_original(dragging)
+
+	# Verificar si el puzzle está completo
+	_check_puzzle_complete()
 
 	dragging = null
 
@@ -99,14 +127,10 @@ func _try_snap(piece: TextureRect) -> bool:
 			if target == null:
 				continue
 
-			var distance = piece.position.distance_to(target.position)
-
-			# Calcular posición esperada según la dirección
 			var expected_pos = _get_expected_position(piece, target, direction)
 			var actual_distance = piece.position.distance_to(expected_pos)
 
 			if actual_distance < snap_distance:
-				# Hacer snap
 				piece.position = expected_pos
 				piece.rotation = 0
 				target.rotation = 0
@@ -118,13 +142,10 @@ func _try_snap(piece: TextureRect) -> bool:
 func _get_expected_position(piece: TextureRect, target: TextureRect, direction: String) -> Vector2:
 	match direction:
 		"right":
-			# piece va a la izquierda de target
 			return Vector2(target.position.x - piece_size, target.position.y)
 		"left":
-			# piece va a la derecha de target
 			return Vector2(target.position.x + piece_size, target.position.y)
 		"top_of":
-			# piece va debajo de target
 			return Vector2(target.position.x, target.position.y + piece_size)
 		_:
 			return piece.position
@@ -145,7 +166,6 @@ func _get_nearby_piece(piece: TextureRect) -> TextureRect:
 func _return_to_original(piece: TextureRect) -> void:
 	var group = _get_group_for_piece(piece)
 	if group != null:
-		# Mover todo el grupo a sus posiciones originales
 		for p in group:
 			if p.name in original_positions:
 				p.position = original_positions[p.name]
@@ -159,7 +179,6 @@ func _add_to_group(piece1: TextureRect, piece2: TextureRect) -> void:
 
 	if group1 != null and group2 != null:
 		if group1 != group2:
-			# Fusionar grupos
 			for p in group2:
 				if p not in group1:
 					group1.append(p)
@@ -171,7 +190,6 @@ func _add_to_group(piece1: TextureRect, piece2: TextureRect) -> void:
 		if piece1 not in group2:
 			group2.append(piece1)
 	else:
-		# Crear nuevo grupo
 		connected_groups.append([piece1, piece2])
 
 func _get_group_for_piece(piece: TextureRect):
@@ -188,9 +206,29 @@ func _move_piece_with_group(piece: TextureRect, delta: Vector2) -> void:
 	else:
 		piece.position += delta
 
+func _check_puzzle_complete() -> void:
+	if puzzle_complete:
+		return
+
+	# Verificar que todas las piezas requeridas estén en el mismo grupo
+	var first_piece = $PuzzlePieces.get_node_or_null(required_pieces[0])
+	if first_piece == null:
+		return
+
+	var group = _get_group_for_piece(first_piece)
+	if group == null:
+		return
+
+	for piece_name in required_pieces:
+		var piece = $PuzzlePieces.get_node_or_null(piece_name)
+		if piece == null or piece not in group:
+			return
+
+	puzzle_complete = true
+	_show_message("¡Puzzle completo! Ahora puedes usar las otras piezas.")
+
 func _show_message(msg: String) -> void:
 	message_label.text = msg
-	# Ocultar después de 3 segundos
 	await get_tree().create_timer(3.0).timeout
 	if message_label.text == msg:
 		message_label.text = ""
