@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6ft3icfpmqws"
-path="res://.godot/imported/retazo1A.png-c267d6ab022a79ec68c125349e288591.ctex"
+uid="uid://rivejnqsxhip"
+path="res://.godot/imported/carta11.png-3cea203b8f431a53cf07f5bbf3a12e1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/retazo/retazo1A.png"
-dest_files=["res://.godot/imported/retazo1A.png-c267d6ab022a79ec68c125349e288591.ctex"]
+source_file="res://assets/carta/carta11.png"
+dest_files=["res://.godot/imported/carta11.png-3cea203b8f431a53cf07f5bbf3a12e1c.ctex"]
 
 [params]
 
