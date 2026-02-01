@@ -1,16 +1,31 @@
 extends Control
 
-func _on_object1_pressed() -> void:
-	$Object1.queue_free()
+var dragging: TextureRect = null
+var drag_offset: Vector2 = Vector2.ZERO
 
-func _on_object2_pressed() -> void:
-	$Object2.queue_free()
+func _ready() -> void:
+	for piece in $PuzzlePieces.get_children():
+		piece.mouse_filter = Control.MOUSE_FILTER_STOP
 
-func _on_object3_pressed() -> void:
-	$Object3.queue_free()
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				_start_drag(event.position)
+			else:
+				_stop_drag()
+	elif event is InputEventMouseMotion and dragging:
+		dragging.position = event.position - drag_offset
 
-func _on_object4_pressed() -> void:
-	$Object4.queue_free()
+func _start_drag(mouse_pos: Vector2) -> void:
+	var pieces = $PuzzlePieces.get_children()
+	pieces.reverse()
+	for piece in pieces:
+		if piece.get_global_rect().has_point(mouse_pos):
+			dragging = piece
+			drag_offset = mouse_pos - piece.position
+			$PuzzlePieces.move_child(piece, -1)
+			break
 
-func _on_go_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/thirdlevel.tscn")
+func _stop_drag() -> void:
+	dragging = null
