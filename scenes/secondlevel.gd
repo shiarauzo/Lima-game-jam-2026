@@ -13,6 +13,24 @@ var required_pieces = ["Retazo3", "Retazo4", "Retazo1A", "Retazo2"]
 # Estado del puzzle
 var puzzle_complete: bool = false
 
+# Contador de retazos colocados y texturas de cartas
+var replacement_count: int = 0
+var carta_textures = [
+	"res://assets/carta/carta22.png",
+	"res://assets/carta/carta33.png",
+	"res://assets/carta/carta44.png"
+]
+
+# Textos de las cartas
+var carta_texts = [
+	"Sé que muchas cosas te impiden hacerme una visita, pero ¿acaso no sería precisamente mi boda la mejor oportunidad de echar por la borda tu injustificado autoexilio, al menos por una vez?",
+	"Sé que muchas cosas te impiden hacerme una visita, pero ¿acaso no sería precisamente mi boda la mejor oportunidad de echar por la borda tu injustificado autoexilio, al menos por una vez?\nAunque nos veíamos a diario en el negocio, comíamos juntos y platicábamos todas las noches, algo en ti me desconcertaba, incluso cambiabas el relato de tu vida con cada persona que conocías. Por eso ahora me cuestiono incluso nuestra amistad.",
+	"Sé que muchas cosas te impiden hacerme una visita, pero ¿acaso no sería precisamente mi boda la mejor oportunidad de echar por la borda tu injustificado autoexilio, al menos por una vez?\nAunque nos veíamos a diario en el negocio, comíamos juntos y platicábamos todas las noches, algo en ti me desconcertaba, incluso cambiabas el relato de tu vida con cada persona que conocías. Por eso ahora me cuestiono incluso nuestra amistad.\nTras quedarme al cuidado de mi padre, solo tú te quedaste conmigo. Te aprecio mucho, por lo que me gustaría que vinieras a mi boda.\nJavier Woremasks"
+]
+
+@onready var carta_reference: TextureRect = $CartaReference
+@onready var carta_text: Label = $CartaReference/CartaText
+
 # Conexiones válidas: pieza -> {dirección: pieza_que_conecta}
 var valid_connections = {
 	"Retazo3": {"right": "Retazo4"},
@@ -89,6 +107,10 @@ func _stop_drag() -> void:
 				var group = _get_group_for_piece(retazo1a)
 				if group != null:
 					group.append(dragging)
+				# Cambiar imagen de la carta
+				_change_carta_image()
+				# Remover de piezas inactivas para que no se pueda volver a usar
+				inactive_pieces.erase(piece_name)
 				dragging = null
 				return
 
@@ -235,3 +257,10 @@ func _show_message(msg: String) -> void:
 
 func _hide_message() -> void:
 	message_label.text = ""
+
+func _change_carta_image() -> void:
+	if replacement_count < carta_textures.size():
+		var new_texture = load(carta_textures[replacement_count])
+		carta_reference.texture = new_texture
+		carta_text.text = carta_texts[replacement_count]
+		replacement_count += 1
