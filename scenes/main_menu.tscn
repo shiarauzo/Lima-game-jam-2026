@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmbbsu4qojttx"]
+
+[ext_resource type="Script" uid="uid://cxidw6qx08ikq" path="res://scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://cxvl8fqb8tlft" path="res://assets/envelope.jpg" id="2_envelope"]
+[ext_resource type="Texture2D" uid="uid://b70nuwexy1pir" path="res://assets/fondo_mainmenu.png" id="3_fondo"]
+[ext_resource type="AudioStream" uid="uid://isyi0cmpvwcp" path="res://assets/audio/Menu_Intro.mp3" id="4_music"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fondo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EnvelopeImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 165.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_envelope")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OpenButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -44.0
+offset_right = 44.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Abrir"
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 50.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "X"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_music")
+autoplay = true
+
+[connection signal="pressed" from="OpenButton" to="." method="_on_open_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_pressed"]

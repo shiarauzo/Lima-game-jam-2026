@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Claude
+.claude/
+ExportTemplates/Godot_v4.4-stable_export_templates.tpz
+
+# Godot export templates (NO subir nunca)
+ExportTemplates/
+ExportTemplates/Godot_v4.4-stable_export_templates.tpz
