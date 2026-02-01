@@ -1,16 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3ylku7d7x4dx"]
-
-[ext_resource type="Texture2D" path="res://Sprites 7/Female_Hand_PNG_Clip_Art.png" id="1_febe8"]
-[ext_resource type="Script" path="res://scenes/father_panels.gd" id="1_g84jk"]
+[gd_scene format=3 uid="uid://d3ylku7d7x4dx"]
 
 [node name="FatherPanels" type="Node2D"]
-script = ExtResource("1_g84jk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(577, 569)
 rotation = -1.58927
 scale = Vector2(0.0427311, 0.0427311)
-texture = ExtResource("1_febe8")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 125.0

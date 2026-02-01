@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmbbsu4qojttx"]
+[gd_scene load_steps=3 format=3 uid="uid://bmbbsu4qojttx"]
 
 [ext_resource type="Script" uid="uid://cxidw6qx08ikq" path="res://scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://cxvl8fqb8tlft" path="res://assets/envelope.jpg" id="2_envelope"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -33,6 +34,7 @@ offset_right = 200.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_envelope")
 expand_mode = 1
 stretch_mode = 5
 
