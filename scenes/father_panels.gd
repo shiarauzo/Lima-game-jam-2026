@@ -1,18 +1,20 @@
 extends Node2D
 
 @onready var sprite := $Sprite2D
-@onready var label := $Label
-
+@onready var dadlabel := $DadLabel
+@onready var sonlabel := $SonLabel
 func _ready():
-	label.visible = false
+	dadlabel.visible = false
 	await get_tree().create_timer(0.8).timeout
 	move_up()
 	await get_tree().create_timer(3).timeout
 	move_down()
 	
 	await wait(0.4)
-
-	await iniciar_dialogo()
+	play_dialog(dadlabel,DadDialog)
+	
+	await play_dialog(sonlabel,SonDialog)
+	
 
 func move_up():
 	var tween := create_tween()
@@ -39,11 +41,11 @@ func move_down():
 	)
 	
 	
-	"""waza"""
+	"""waza padre"""
 	
 	
 	
-var dialog := [
+var DadDialog := [
 	"Hola...",
 	"Creo que esto está funcionando.",
 	"Unity ya no parece tan fácil 😅",
@@ -52,22 +54,31 @@ var dialog := [
 
 var dialog_index := 0
 
+var SonDialog := [
+	"Papá...",
+	"¿Qué estás haciendo?",
+	"Eso se ve raro.",
+	"Bueno..."
+]
+
+
+
 
 # ─────────────────────────────
+# ─────────────────────────────
 
-
-func iniciar_dialogo():
+func play_dialog(label: Label, dialog: Array):
 	label.visible = true
 	dialog_index = 0
-
+	var index := 0   # ← LOCAL
 	while dialog_index < dialog.size():
 		label.text = dialog[dialog_index]
 		dialog_index += 1
 		await wait(2.0)
 
 	label.visible = false
-
-# ─────────────────────────────
+	
 
 func wait(time: float):
 	await get_tree().create_timer(time).timeout
+"""waza ijo"""
