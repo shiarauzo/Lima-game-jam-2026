@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dw1kgtq5ymrjy" path="res://Sprites 7/Primera-escena.png" id="2_aswpm"]
 [ext_resource type="Texture2D" uid="uid://c6jbfq1g54r5b" path="res://Sprites 7/Mano-izquierdaB.png" id="3_a1i0j"]
 [ext_resource type="Texture2D" uid="uid://0nx8tstsyv5n" path="res://Sprites 7/Globo-de-texto-normal.png" id="4_a1i0j"]
-[ext_resource type="Script" uid="uid://bd32vux3sdquw" path="res://scenes/word_search.gd" id="4_hh45s"]
+[ext_resource type="Script" uid="uid://dw3hcrtahl03w" path="res://scenes/word_search.gd" id="4_hh45s"]
 [ext_resource type="Texture2D" uid="uid://duk8ak24p3crj" path="res://Sprites 7/globo de texto normal.png" id="4_orwr1"]
 [ext_resource type="Texture2D" uid="uid://cutej3d7b14vb" path="res://Sprites 7/sopa de letras fondo.png" id="5_x2dys"]
 
