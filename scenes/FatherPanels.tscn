@@ -71,8 +71,8 @@ offset_bottom = 63.0
 script = ExtResource("4_hh45s")
 
 [node name="Sprite2D" type="Sprite2D" parent="WordSearch"]
-position = Vector2(265.34, 211.358)
-scale = Vector2(0.505512, 0.505512)
+position = Vector2(265.951, 209.142)
+scale = Vector2(0.503834, 0.503834)
 texture = ExtResource("5_x2dys")
 
 [node name="Grid" type="GridContainer" parent="WordSearch"]
