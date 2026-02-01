@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3secondlevel"]
+[gd_scene load_steps=16 format=3 uid="uid://c3secondlevel"]
 
 [ext_resource type="Script" uid="uid://bacykkp6q5ts6" path="res://scenes/secondlevel.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://b70nuwexy1pir" path="res://assets/fondo_mainmenu.png" id="2_fondo"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cjhxqhsnsp3u1" path="res://assets/retazo/retazo4.png" id="9_retazo4"]
 [ext_resource type="FontFile" uid="uid://cm8i15jtyjb6p" path="res://Fonts/OLDSH___.TTF" id="10_font"]
 [ext_resource type="FontFile" uid="uid://dvcj2o5xjvq8w" path="res://Fonts/bloodcrowc.ttf" id="11_bloodcrow"]
+[ext_resource type="AudioStream" uid="uid://cfweoarh8f4yc" path="res://assets/audio/Tema 1 .mp3" id="12_tema1"]
+[ext_resource type="AudioStream" uid="uid://dtadeefs77mhy" path="res://assets/audio/Tema 2.mp3" id="13_tema2"]
+[ext_resource type="AudioStream" uid="uid://chexw46svwhqt" path="res://assets/audio/Tema 3.mp3" id="14_tema3"]
 
 [node name="SecondLevel" type="Control"]
 layout_mode = 3
@@ -174,3 +177,17 @@ rotation = -0.07
 texture = ExtResource("9_retazo4")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Tema1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_tema1")
+autoplay = true
+
+[node name="Tema2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_tema2")
+volume_db = -80.0
+autoplay = true
+
+[node name="Tema3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_tema3")
+volume_db = -80.0
+autoplay = true
