@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3secondlevel"]
+[gd_scene load_steps=13 format=3 uid="uid://c3secondlevel"]
 
 [ext_resource type="Script" uid="uid://bacykkp6q5ts6" path="res://scenes/secondlevel.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://b70nuwexy1pir" path="res://assets/fondo_mainmenu.png" id="2_fondo"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://0hllosvn1cia" path="res://assets/retazo/retazo3.png" id="8_retazo3"]
 [ext_resource type="Texture2D" uid="uid://cjhxqhsnsp3u1" path="res://assets/retazo/retazo4.png" id="9_retazo4"]
 [ext_resource type="FontFile" uid="uid://cm8i15jtyjb6p" path="res://Fonts/OLDSH___.TTF" id="10_font"]
+[ext_resource type="FontFile" uid="uid://dvcj2o5xjvq8w" path="res://Fonts/bloodcrowc.ttf" id="11_bloodcrow"]
 
 [node name="SecondLevel" type="Control"]
 layout_mode = 3
@@ -42,7 +43,8 @@ offset_top = 20.0
 offset_right = 300.0
 offset_bottom = 60.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.8, 0.1, 0.1, 1)
+theme_override_fonts/font = ExtResource("11_bloodcrow")
 theme_override_font_sizes/font_size = 18
 horizontal_alignment = 1
 vertical_alignment = 1
