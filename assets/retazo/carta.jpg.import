@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvl8fqb8tlft"
-path="res://.godot/imported/envelope.jpg-b9e61cff0e3808f6309635833ee2c868.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://dvw5ggunawlds"
+valid=false
 
 [deps]
 
-source_file="res://assets/envelope.jpg"
-dest_files=["res://.godot/imported/envelope.jpg-b9e61cff0e3808f6309635833ee2c868.ctex"]
+source_file="res://assets/retazo/carta.jpg"
 
 [params]
 

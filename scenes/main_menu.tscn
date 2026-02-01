@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bmbbsu4qojttx"]
 
 [ext_resource type="Script" uid="uid://cxidw6qx08ikq" path="res://scenes/main_menu.gd" id="1_28flt"]
-[ext_resource type="Texture2D" uid="uid://cxvl8fqb8tlft" path="res://assets/envelope.jpg" id="2_envelope"]
+[ext_resource type="Texture2D" path="res://assets/carta.png" id="2_envelope"]
 [ext_resource type="Texture2D" uid="uid://b70nuwexy1pir" path="res://assets/fondo_mainmenu.png" id="3_fondo"]
 [ext_resource type="AudioStream" uid="uid://isyi0cmpvwcp" path="res://assets/audio/Menu_Intro.mp3" id="4_music"]
 
