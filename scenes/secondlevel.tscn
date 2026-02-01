@@ -100,10 +100,10 @@ grow_vertical = 2
 
 [node name="Retazo1A" type="TextureRect" parent="PuzzlePieces"]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 150.0
-offset_bottom = 150.0
+offset_left = 70.0
+offset_top = 100.0
+offset_right = 170.0
+offset_bottom = 200.0
 rotation = -0.087
 texture = ExtResource("3_retazo1a")
 expand_mode = 1
@@ -111,10 +111,10 @@ stretch_mode = 5
 
 [node name="Retazo1B" type="TextureRect" parent="PuzzlePieces"]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 60.0
-offset_right = 270.0
-offset_bottom = 160.0
+offset_left = 315.0
+offset_top = 278.0
+offset_right = 415.0
+offset_bottom = 378.0
 rotation = 0.14
 texture = ExtResource("4_retazo1b")
 expand_mode = 1
@@ -122,10 +122,10 @@ stretch_mode = 5
 
 [node name="Retazo1C" type="TextureRect" parent="PuzzlePieces"]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 170.0
-offset_right = 160.0
-offset_bottom = 270.0
+offset_left = 317.0
+offset_top = 132.0
+offset_right = 417.0
+offset_bottom = 232.0
 rotation = -0.052
 texture = ExtResource("5_retazo1c")
 expand_mode = 1
@@ -133,10 +133,10 @@ stretch_mode = 5
 
 [node name="Retazo1D" type="TextureRect" parent="PuzzlePieces"]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 180.0
-offset_right = 280.0
-offset_bottom = 280.0
+offset_left = 89.0
+offset_top = 254.0
+offset_right = 189.0
+offset_bottom = 354.0
 rotation = 0.105
 texture = ExtResource("6_retazo1d")
 expand_mode = 1
@@ -144,10 +144,10 @@ stretch_mode = 5
 
 [node name="Retazo2" type="TextureRect" parent="PuzzlePieces"]
 layout_mode = 0
-offset_left = 70.0
-offset_top = 290.0
-offset_right = 170.0
-offset_bottom = 390.0
+offset_left = 262.0
+offset_top = 215.0
+offset_right = 412.0
+offset_bottom = 315.0
 rotation = -0.122
 texture = ExtResource("7_retazo2")
 expand_mode = 1
@@ -155,10 +155,10 @@ stretch_mode = 5
 
 [node name="Retazo3" type="TextureRect" parent="PuzzlePieces"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 300.0
-offset_right = 290.0
-offset_bottom = 400.0
+offset_left = 208.0
+offset_top = 85.0
+offset_right = 308.0
+offset_bottom = 185.0
 rotation = 0.07
 texture = ExtResource("8_retazo3")
 expand_mode = 1
@@ -166,10 +166,10 @@ stretch_mode = 5
 
 [node name="Retazo4" type="TextureRect" parent="PuzzlePieces"]
 layout_mode = 0
-offset_left = 120.0
-offset_top = 420.0
-offset_right = 220.0
-offset_bottom = 520.0
+offset_left = 146.0
+offset_top = 230.0
+offset_right = 246.0
+offset_bottom = 330.0
 rotation = -0.07
 texture = ExtResource("9_retazo4")
 expand_mode = 1

@@ -45,8 +45,8 @@ var connected_groups: Array = []
 # Distancia para hacer snap
 var snap_distance: float = 50.0
 
-# Tamaño de las piezas
-var piece_size: float = 100.0
+# Tamaño de las piezas (distancia entre piezas al conectarse)
+var piece_size: float = 50.0
 
 @onready var message_label: Label = $MessageLabel
 
