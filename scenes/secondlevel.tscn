@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3secondlevel"]
+[gd_scene load_steps=14 format=3 uid="uid://c3secondlevel"]
 
 [ext_resource type="Script" uid="uid://bacykkp6q5ts6" path="res://scenes/secondlevel.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://b70nuwexy1pir" path="res://assets/fondo_mainmenu.png" id="2_fondo"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cjhxqhsnsp3u1" path="res://assets/retazo/retazo4.png" id="9_retazo4"]
 [ext_resource type="FontFile" uid="uid://cm8i15jtyjb6p" path="res://Fonts/OLDSH___.TTF" id="10_font"]
 [ext_resource type="FontFile" uid="uid://dvcj2o5xjvq8w" path="res://Fonts/bloodcrowc.ttf" id="11_bloodcrow"]
+[ext_resource type="AudioStream" uid="uid://cumj52ue1ux7c" path="res://assets/audio/Tema 1 .mp3" id="12_tema1"]
 
 [node name="SecondLevel" type="Control"]
 layout_mode = 3
@@ -191,3 +192,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 20
 text = "Continuar"
+
+[node name="Tema1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_tema1")
+autoplay = true

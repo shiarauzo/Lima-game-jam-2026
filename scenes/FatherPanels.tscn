@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3ylku7d7x4dx"]
+[gd_scene load_steps=9 format=3 uid="uid://d3ylku7d7x4dx"]
 
 [ext_resource type="Script" path="res://scenes/father_panels.gd" id="1_g84jk"]
 [ext_resource type="Texture2D" uid="uid://dw1kgtq5ymrjy" path="res://Sprites 7/Primera-escena.png" id="2_aswpm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/word_search.gd" id="4_hh45s"]
 [ext_resource type="Texture2D" uid="uid://duk8ak24p3crj" path="res://Sprites 7/globo de texto normal.png" id="4_orwr1"]
 [ext_resource type="Texture2D" uid="uid://cutej3d7b14vb" path="res://Sprites 7/sopa de letras fondo.png" id="5_x2dys"]
+[ext_resource type="AudioStream" uid="uid://72fqdfhhc74w" path="res://assets/audio/Tema 2.mp3" id="6_tema2"]
 
 [node name="FatherPanels" type="Node2D"]
 script = ExtResource("1_g84jk")
@@ -89,3 +90,7 @@ offset_left = 101.0
 offset_top = 137.0
 offset_right = 499.0
 offset_bottom = 419.0
+
+[node name="Tema2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tema2")
+autoplay = true
